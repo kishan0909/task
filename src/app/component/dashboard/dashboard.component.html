@@ -1,0 +1,32 @@
+<div class="row mt-5">
+    <div class="col-md-8 mx-auto mt-5 text-center">
+        <p class="fs-3">Welcome to dashboard</p>
+    </div>
+</div>
+
+<div class="col-md-10 col-sm-10 mx-auto rounded-2">
+    <div class="table-responsiv">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Model</th>
+                    <th>Ram</th>
+                    <th>Hdd</th>
+                    <th>Location</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pd of productData;let i=index;">
+                    <td>{{i+1}}</td>
+                    <td>{{pd.Model}}</td>
+                    <td>{{pd.RAM}}</td>
+                    <td>{{pd.HDD}}</td>
+                    <td>{{pd.Location}}</td>
+                    <td>{{pd.Price}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

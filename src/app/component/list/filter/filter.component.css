@@ -1,0 +1,29 @@
+#abc{
+    display: none!important;
+}
+#xyz:hover,#abc{
+    display: block!important;
+}
+
+#xyz:out,#abc{
+    display: none;
+}
+
+#sub1{
+    position: fixed;
+    background-color: white;
+    padding: 15px;
+    margin-top: -25px;
+    left: 130px;
+}
+.custMStr{
+    margin-left: -65px;
+    z-index: 1;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+.liOver:hover{
+    background-color: white;
+    color: black;
+}

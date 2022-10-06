@@ -1,0 +1,40 @@
+    <div class="col-md-12 col-sm-12 mx-auto">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Filter
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" (click)="storageO()">storage</a></li>
+              <li id="xyz" (mouseover)="subDropDown()" (mouseout)="subDropDownT()"><a class="dropdown-item">RAM</a>
+                <ul class="d-none border p-2" id="sub1" (mouseover)="subDropDown()">
+                    <li *ngFor="let rm of ram;"><div class="form-check" value="rm" (click)="selectedRam(rm)">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          {{rm}}
+                        </label>
+                      </div></li>
+                </ul>
+             </li>
+              <li><a class="dropdown-item" (mouseover)="hddList()" (mouseout)="hddListC()">HDD</a>
+                <select class="d-none form-select ms-2 me-2" id="selectHdd" (mouseover)="hddList()" [(ngModel)]="hddSelect" (click)="selectedHdd()">
+                  <option *ngFor="let hd of hardisk">{{hd}}</option>
+                </select>
+              </li>
+             <li><a class="dropdown-item" href="#" (mouseover)="locationList()" (mouseout)="locationListC()">location</a>
+                <select class="d-none form-select ms-2 me-2" id="selectLocation" (mouseover)="locationList()" [(ngModel)]="selectLoc" (click)="selectedLocation()">
+                    <option *ngFor="let ln of location">{{ln}}</option>
+                  </select>  
+             </li>
+            </ul>
+          </div>
+    </div>
+<div class="d-none col-md-4 position-fixed border text-left custMStr" id="storage">
+    <p class="text-center">Storage</p>
+    <ul class="border p-2">
+        <li *ngFor="let st of selectedStorage;" class="liOver"><div class="form-check" value="rm" (click)="selectedStorageM(st)">
+            <label class="form-check-label">
+              {{st}}
+            </label>
+          </div></li>
+    </ul>
+</div>

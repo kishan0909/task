@@ -1,0 +1,41 @@
+<div class="container-fluid position-relative">
+    list works
+    <div class="container">
+        <div class="row">
+            <app-filter
+            [locationDt]="location"
+            (filterMiterStorage)="filterDataStorage($event)"
+            (filterMiterRam)="filterDataRam($event)"
+            (filterMiterHdd)="filterDataHdd($event)"
+            (filterMiterLocation)="filterDataLocation($event)"></app-filter>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="table-responsiv">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Model</th>
+                                <th>Hdd</th>
+                                <th>RAM</th>
+                                <th>Location</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let p of filterArr;let i=index;">
+                                <td>{{i+1}}</td>
+                                <td>{{p.Model}}</td>
+                                <td>{{p.HDD}}</td>
+                                <td>{{p.RAM}}</td>
+                                <td>{{p.Location}}</td>
+                                <td>{{p.Price}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
